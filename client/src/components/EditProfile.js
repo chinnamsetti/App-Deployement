@@ -31,7 +31,7 @@ function EditProfile() {
         emailInputRef.current.value=storeObj.loginDetails.email;
         mobileNoInputRef.current.value=storeObj.loginDetails.mobileNo;
 
-        setprofilePic(`http://localhost:1405/${storeObj.loginDetails.profilePic}`);
+        setprofilePic(`/${storeObj.loginDetails.profilePic}`);
 
     }
 
@@ -58,7 +58,7 @@ function EditProfile() {
         body:dataToSend,
         
     }
-    let JSONData=await fetch("http://localhost:1405/updateProfile",reqOptions);
+    let JSONData=await fetch("/updateProfile",reqOptions);
     let JSOData=await JSONData.json();
     console.log(JSOData);
     alert(JSOData.msg);

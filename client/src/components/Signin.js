@@ -25,7 +25,7 @@ function Signin() {
         method:"POST",
         body:fd,
        }
-       let JSONData=await fetch("http://localhost:1405/validateToken",reqOptions);
+       let JSONData=await fetch("/validateToken",reqOptions);
        let JSOData=await JSONData.json();
        console.log(JSOData);
 
@@ -49,7 +49,7 @@ function Signin() {
           method:"POST",
           body:dataToSend,
       };
-    let JSONData=await fetch("http://localhost:1405/login",reqOptions);
+    let JSONData=await fetch("/login",reqOptions);
     let JSOData=await JSONData.json();
 
     if(JSOData.status=="success"){

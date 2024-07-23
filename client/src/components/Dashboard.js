@@ -18,7 +18,7 @@ function Dashboard() {
             method:"DELETE",
             body:fd,
         }
-        let JSONData=await fetch("http://localhost:1405/deleteProfile",reqOptions);
+        let JSONData=await fetch("/deleteProfile",reqOptions);
         let JSOData=await JSONData.json();
 
         alert(JSOData.msg)
@@ -32,7 +32,7 @@ function Dashboard() {
     <div className="App">
         <TopNavigation ></TopNavigation>
         <br></br>
-        <img className="profilePic" src={`http://localhost:1405/${storeObj.loginDetails.profilePic}`}></img>
+        <img className="profilePic" src={`/${storeObj.loginDetails.profilePic}`}></img>
         <h3>  {storeObj.loginDetails.firstName} {""}
             {storeObj.loginDetails.lastName}
         </h3>
